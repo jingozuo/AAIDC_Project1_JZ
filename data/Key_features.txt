@@ -1,0 +1,22 @@
+Here are the key features of an agentic AI system.
+
+Proactive
+Agentic AI acts proactively rather than waiting for direct input. Traditional systems are reactive, responding only when triggered and following predefined workflows. In contrast, agentic systems anticipate needs, identify emerging patterns, and take initiative to address potential issues before they escalate. Their proactive behavior is driven by environmental awareness and their ability to evaluate outcomes against long-term goals.
+
+For instance, in a supply chain setting, a traditional logistics platform updates delivery statuses when a user checks in or through periodic notifications. An agentic AI system, however, can monitor inventory levels, track weather conditions, and anticipate shipping delays. It can proactively raise alerts and even reroute shipments to reduce downtime.
+
+Adaptable
+A key feature of agentic AI is its ability to adapt to changing environments and specific domains. Traditional SaaS solutions are built to scale across industries and handle repetitive tasks, but they often lack the depth to understand unique domain-specific situations. Agentic systems fill this gap by using context awareness and domain knowledge, enabling AI agents to respond intelligently. They adjust their actions based on real-time input and can handle complex scenarios that standard solutions cannot.
+
+For example, while a generic customer service platform might respond with predefined answers, an agentic AI system supporting a healthcare provider understands medical terminology and complies with healthcare regulations. It can adapt to evolving patient concerns and delivers more accurate, context-sensitive support.
+
+Collaborative
+Agentic AI is designed to collaborate with humans and with other agentic AI systems. AI agents work as part of a broader team. They can understand shared goals, interpret human intent, and coordinate actions accordingly. They work well in settings that require human oversight or decision-making by considering inputs from multiple sources.
+
+For example, a treatment planning agent can coordinate with several different medical teams to prepare an integrated treatment and follow-up plan for a cancer patient.
+
+Specialized
+Agentic AI typically builds upon multiple hyperspecialized agents, with each focused on a narrow area of expertise. These AI-powered agents coordinate with each other, sharing insights and handing off tasks as needed. This approach enables significantly deeper domain-specific performance.
+
+For instance, in financial services, one agent might specialize in regulatory compliance, another in fraud detection, and another in portfolio optimization. Working together, they can monitor transactions in real time, flagging anomalies and recommending investment adjustments, all while maintaining regulatory compliance.
+

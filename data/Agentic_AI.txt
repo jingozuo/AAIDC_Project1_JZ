@@ -1,0 +1,6 @@
+Agentic AI is an autonomous AI system that can act independently to achieve pre-determined goals. Traditional software follows pre-defined rules, and traditional artificial intelligence also requires prompting and step-by-step guidance. However, agentic AI is proactive and can perform complex tasks without constant human oversight. "Agentic" indicates agency ? the ability of these systems to act independently, but in a goal-driven manner.
+
+AI agents can communicate with each other and other software systems to automate existing business processes. But beyond static automation, they make independent contextual decisions. They learn from their environment and adapt to changing conditions, enabling them to perform sophisticated workflows with accuracy.
+
+For example, an agentic AI system can optimize employee shift schedules. If an employee is off sick, the agent can communicate with other employees and readjust the schedule while still meeting project resource and time requirements.
+

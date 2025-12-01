@@ -15,7 +15,6 @@ By completing this project, you'll have an AI assistant that can:
 - 💬 **Answer questions** using the information it found
 - 🧠 **Combine multiple sources** to give comprehensive answers
 
-
 Welcome to your RAG (Retrieval-Augmented Generation) project! This repository provides a **template** that you need to complete. The framework is set up, but the core functionality is missing - that's your job to implement!
 
 ## 🎯 What You Need to Build
@@ -27,7 +26,6 @@ You will implement a complete RAG system that can:
 - Search for relevant context based on user queries
 - Generate responses using retrieved context and an LLM
 
-
 ## 📝 Implementation Steps
 
 The project requires implementing 7 main steps:
@@ -35,7 +33,7 @@ The project requires implementing 7 main steps:
 1. **Prepare Your Documents** - Add your own documents to the data directory
 2. **Document Loading** - Load documents from files into the system
 3. **Text Chunking** - Split documents into smaller, searchable chunks
-4. **Document Ingestion** - Process and store documents in the vector database  
+4. **Document Ingestion** - Process and store documents in the vector database
 5. **Similarity Search** - Find relevant documents based on queries
 6. **RAG Prompt Template** - Design effective prompts for the LLM
 7. **RAG Query Pipeline** - Complete query-response pipeline using retrieved context
@@ -105,11 +103,11 @@ def load_documents() -> List[str]:
 def chunk_text(self, text: str, chunk_size: int = 500) -> List[str]:
     """
     Split text into smaller chunks for better retrieval.
-  
+
     Args:
         text: Input text to chunk
         chunk_size: Approximate number of characters per chunk
-  
+
     Returns:
         List of text chunks
     """
@@ -134,7 +132,7 @@ def chunk_text(self, text: str, chunk_size: int = 500) -> List[str]:
 def add_documents(self, documents: List[Dict[str, Any]]) -> None:
     """
     Process documents and add them to the vector database.
-  
+
     Args:
         documents: List of documents with 'content' and optional 'metadata'
     """
@@ -166,11 +164,11 @@ def add_documents(self, documents: List[Dict[str, Any]]) -> None:
 def search(self, query: str, n_results: int = 5) -> Dict[str, Any]:
     """
     Find documents similar to the query.
-  
+
     Args:
         query: Search query
         n_results: Number of results to return
-  
+
     Returns:
         Dictionary with search results
     """
@@ -223,11 +221,11 @@ self.prompt_template = None  # Your implementation here
 def query(self, question: str, n_results: int = 3) -> Dict[str, Any]:
     """
     Answer questions using retrieved context.
-  
+
     Args:
         question: User's question
         n_results: Number of context chunks to retrieve
-  
+
     Returns:
         Dictionary with answer and context information
     """
@@ -248,7 +246,6 @@ def query(self, question: str, n_results: int = 3) -> Dict[str, Any]:
 3. Generate response using LLM + context
 4. Return structured results
 
-
 ---
 
 ## 🧪 Testing Your Implementation
@@ -263,12 +260,14 @@ def query(self, question: str, n_results: int = 3) -> Dict[str, Any]:
    chunks = vdb.chunk_text("Your test text here...")
    print(f"Created {len(chunks)} chunks")
    ```
+
 2. **Test document loading:**
 
    ```python
    documents = [{"content": "Test document", "metadata": {"title": "Test"}}]
    vdb.add_documents(documents)
    ```
+
 3. **Test search:**
 
    ```python
@@ -299,6 +298,7 @@ Try these example questions:
 ### Alternative Options You Can Choose:
 
 **Vector Databases:**
+
 - FAISS (Facebook AI Similarity Search)
 - Pinecone
 - Weaviate
@@ -306,18 +306,21 @@ Try these example questions:
 - Or any other vector store you prefer
 
 **LLM Frameworks:**
+
 - Direct API calls (OpenAI, Anthropic, etc.)
 - Ollama for local models
 - Hugging Face Transformers
 - LlamaIndex instead of LangChain
 
 **Embedding Models:**
+
 - OpenAI embeddings (ada-002)
 - Cohere embeddings
 - Any Hugging Face model
 - Local embedding models
 
 **Text Processing:**
+
 - Custom chunking logic
 - spaCy for advanced NLP
 - NLTK for text processing
@@ -360,11 +363,10 @@ Before starting, make sure you have:
    ```
    OPENAI_API_KEY=your_key_here
    # OR
-   GROQ_API_KEY=your_key_here  
+   GROQ_API_KEY=your_key_here
    # OR
    GOOGLE_API_KEY=your_key_here
    ```
-
 
 ---
 

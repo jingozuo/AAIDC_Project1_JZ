@@ -1,0 +1,15 @@
+About this guide
+This guide offers a comprehensive overview of the Autopilot initiative, covering its framework, tools, and benefits. It includes:
+* Licensing options, including Unified Pricing and Flex licensing models.
+* Data privacy considerations and best practices for secure usage.
+* Best practices for effective interaction with Autopilot, including writing prompts and designing relevant automations.
+* Detailed instructions on generating automations and tests, which are core Autopilot capabilities found in products like Studio, Studio Web, and Test Manager.
+* Information about the Autopilot chat experience, available in two forms:
+* Autopilot chat, integrated into various UiPath products
+* Autopilot for Everyone, which is available exclusively in UiPath Assistant
+* Guidance on managing and interacting with Autopilot features across different UiPath products.
+* Information on Autopilot plugins and integrations with other platforms.
+About Autopilot release notes:
+* Autopilot own release notes focus on developments in the chat interface, Autopilot for Everyone, and Autopilot integrations.
+* For Autopilot improvements in specific products, such as Studio or Test Manager, refer to that product release notes.
+

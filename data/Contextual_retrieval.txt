@@ -1,0 +1,8 @@
+Contextual retrieval is a technique introduced by Anthropic in September 2024. Their article covers two topics: Adding context to document chunks and combining keyword search (BM25) with semantic search to fetch relevant documents.
+
+To add context to documents, they take each document chunk and prompt an LLM, given the chunk and the entire document, to rewrite the chunk to include both information from the given chunk and relevant context from the entire document.
+
+For example, if you have a document divided into two chunks. Where chunk one includes important metadata such as an address, date, location, and time, and the other chunk contains information about a lease agreement. The LLM might rewrite the second chunk to include both the lease agreement and the most relevant part of the first chunk, which in this case is the address, location, and date.
+
+Anthropic also discusses combining semantic search and keyword search in their article, essentially fetching documents with both techniques, and using a prioritized approach to combine the documents retrieved from each technique.
+

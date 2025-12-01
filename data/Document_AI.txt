@@ -1,0 +1,6 @@
+Document AI is a Snowflake AI feature that uses Arctic-TILT, a proprietary large language model (LLM), to extract data from documents. Document AI processes documents of various formats and extracts information from both text-heavy paragraphs and the content in a graphical form, such as logos, handwritten text (signatures), tables, or checkmarks. With Document AI, you can prepare pipelines for continuous processing of new documents of a specific type, such as invoices or finance statements. You can extract information from entities (in a form of a single value or a list of values), or tables based on the list of specified columns.
+
+Document AI provides both zero-shot extraction and fine-tuning. Zero-shot means that the foundation model can locate and extract information specific to a document type, even if the model has never seen the document before. This is because the foundation model is trained on a large volume of various documents, so the model broadly understands the type of document being processed.
+
+Additionally, you can fine-tune the Snowflake Arctic-TILT model to improve your results by training the model on the documents specific to your use case. The fine-tuned model (including the training data used) is available only to you and is not shared with other Snowflake customers.
+
