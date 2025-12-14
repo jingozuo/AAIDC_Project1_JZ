@@ -1,15 +1,16 @@
-About this guide
-This guide offers a comprehensive overview of the Autopilot initiative, covering its framework, tools, and benefits. It includes:
-* Licensing options, including Unified Pricing and Flex licensing models.
-* Data privacy considerations and best practices for secure usage.
-* Best practices for effective interaction with Autopilot, including writing prompts and designing relevant automations.
-* Detailed instructions on generating automations and tests, which are core Autopilot capabilities found in products like Studio, Studio Web, and Test Manager.
-* Information about the Autopilot chat experience, available in two forms:
-* Autopilot chat, integrated into various UiPath products
-* Autopilot for Everyone, which is available exclusively in UiPath Assistant
-* Guidance on managing and interacting with Autopilot features across different UiPath products.
-* Information on Autopilot plugins and integrations with other platforms.
-About Autopilot release notes:
-* Autopilot own release notes focus on developments in the chat interface, Autopilot for Everyone, and Autopilot integrations.
-* For Autopilot improvements in specific products, such as Studio or Test Manager, refer to that product release notes.
+UiPath Autopilot is a new set of AI-powered experiences across the UiPath Platform that make every user from interns to CEOs more productive.
+Autopilot for Developers: Build automation solutions in a breeze, create automations, apps, and expressions in UiPath Studio and Apps.
+Developers can fluently express their design intentions textually or visually, leading to diverse and user-friendly interface designs. Furthermore, the opportunity to generate expressions across all apps ensures a unified and accelerated development process.
 
+Autopilot for Testers: Empower all your testers to perform at their best with built-in, customizable AI. Accelerate every phase of the testing lifecycle with the power of an out-of-the-box agent.
+
+Autopilot for Business Analysts: Unlock insights, and discover new automation opportunities at speed with UiPath Communications Mining and Process Mining.
+Autopilot for Communications Mining gets your analytics and reporting questions answered at speed. Express queries in natural language and the correct filters are applied.
+Autopilot for Process Mining making it easier for business analysts to easily filter, and create dashboards for discovering the highest-ROI optimization and automation opportunities.
+
+Autopilot for Everyone: Complete everyday, time-consuming tasks in record time. Supercharge productivity with Autopilot for Everyone and UiPath Clipboard AI.
+Autopilot for Everyone is an AI companion that helps with your daily tasks:
+1. Works across your business apps and systems
+2. Understands your work context and provides contextual guidance
+3. Automates digital paperwork with best-in-class specialized AI models
+4. Features interactive chat, powered by Gen AI

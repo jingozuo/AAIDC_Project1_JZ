@@ -1,7 +1,10 @@
+import os
+# Disable tokenizer parallelism warning (must be set before importing SentenceTransformer)
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 from sentence_transformers import SentenceTransformer
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from typing import List, Dict, Any
-import os
 import chromadb
 
 
@@ -35,7 +38,11 @@ class VectorDB:
         # Get or create collection
         self.collection = self.client.get_or_create_collection(
             name=self.collection_name,
-            metadata={"description": "RAG document collection"},
+            metadata={
+                "description": "RAG document collection",
+                "hnsw:space": "cosine",
+                "hnsw:batch_size": 10000,
+            },
         )
 
         print(
@@ -52,7 +59,13 @@ class VectorDB:
         Returns:
             List of text chunks
         """
-        chunks = []
+        # Handle empty or very short text
+        if not text or len(text.strip()) == 0:
+            return []
+        
+        # Ensure chunk_size is valid
+        if chunk_size <= 0:
+            chunk_size = 500
 
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,
@@ -74,10 +87,6 @@ class VectorDB:
         print(f"Processing {len(documents)} documents...")
 
         for doc_index, document in enumerate(documents):
-            # content = document.get("content", "")
-            # metadata = document.get("metadata", {})
-            # chunks = self.chunk_text(content)
-
             # Normalize input (support both dicts and raw strings)
             if isinstance(document, str):
                 document = {"content": document,
@@ -88,13 +97,26 @@ class VectorDB:
                     f"Invalid document format at index {doc_index}: {document}")
 
             content = document.get("content", "")
+            
+            # Skip empty documents
+            if not content or len(content.strip()) == 0:
+                print(f"Document {doc_index}: Skipping empty document")
+                continue
+            
             # Ensure metadata exists and is not empty
             metadata = document.get("metadata") or {
                 "source": f"doc_{doc_index}"}
+            
+    
             chunks = self.chunk_text(content)
 
             print(
                 f"Document {doc_index}: Split into {len(chunks)} chunks.")
+
+            # Skip if no chunks were created
+            if len(chunks) == 0:
+                print(f"Document {doc_index}: No chunks created, skipping")
+                continue
 
             chunk_ids = [
                 f"doc_{doc_index}_chunk_{i}" for i in range(len(chunks))
@@ -132,14 +154,22 @@ class VectorDB:
             [query]).tolist()[0]  # get the first (and only) embedding
 
         print("Querying collection...")
+        print('\n')
         results = self.collection.query(
             query_embeddings=[query_embedding],
             n_results=n_results,
+            include=["distances", "metadatas", "documents"],
         )
 
+        # Format results - handle nested lists from ChromaDB
+        documents_list = results["documents"][0] if results["documents"] and isinstance(results["documents"][0], list) else results["documents"]
+        metadatas_list = results["metadatas"][0] if results["metadatas"] and isinstance(results["metadatas"][0], list) else results["metadatas"]
+        distances_list = results["distances"][0] if results["distances"] and isinstance(results["distances"][0], list) else results["distances"]
+        ids_list = results["ids"][0] if results["ids"] and isinstance(results["ids"][0], list) else results["ids"]
+
         return {
-            "documents": results["documents"],
-            "metadatas": results["metadatas"],
-            "distances": results["distances"],
-            "ids": results["ids"]
+            "documents": documents_list,
+            "metadatas": metadatas_list,
+            "distances": distances_list,
+            "ids": ids_list
         }
